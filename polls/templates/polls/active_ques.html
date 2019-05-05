@@ -1,0 +1,19 @@
+{% extends 'polls/login.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+    <form method='POST' action="{% url 'polls:activeuser_ques' %}">
+      {% csrf_token %}
+      <table>
+        {{ activeform.as_p }}
+      </table>   
+      
+      <input type="submit" name="Send Your Question" value="submit">
+    </form>   
+  </div>
+</div>  
+ 
+{% endblock %}
+
+  

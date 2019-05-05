@@ -1,0 +1,33 @@
+{% extends 'polls/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Welcome to the Django !</h1>  
+       
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+       
+        {% if user.is_authenticated %}
+           <h2>Hello {{ user.username }}</h2>
+            {% if latest_question_list %}
+            <h3>List of Questions,You can Participate in Poll!!</h3>
+            <ul>
+                {%for question in latest_question_list%}
+                    <li><a class="links" href="{% url 'polls:detail' question.id %}" > {{ question.question_text }}</a></li>
+                {%endfor%}
+            </ul>
+            {%else%}
+                <p>No polls are available.</p>
+            {% endif %}
+        {% else %}
+            <h2>Register or Login if you'd like to</h2>
+        {% endif %}
+        <button> <a href = "{% url 'polls:activeuser_ques' %}">You can Enter Question</a></button> 
+    </div>
+</div>
+{% endblock %}
+
+
+
+

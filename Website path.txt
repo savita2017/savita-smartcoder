@@ -1,5 +1,0 @@
-To open the website  first unzip the file named savita.zip to c drive
-and then open the file  C:\savita\stad
-
-
-

@@ -1,0 +1,2 @@
+ background.gif
+ {% static 'votings/images/image-name'%}"
